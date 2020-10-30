@@ -1,0 +1,15 @@
+<form name="startup_pred" method="POST" enctype="multipart/form-data" action="{{ url_for('make_pred') }}">
+<h1><center>Startup Profit Predictions - Enter New Data in Form</center></h1><br><br>
+  <input type="hidden" name="profit" value=NULL>
+  <label>Research and Development Spend:</label><br>
+  <input type="number" name="rdspnd" min="0" required><br><br>
+  <label>Administration Spend:</label><br>
+  <input type="number" name="admin" min="0" required><br><br>
+  <label>Marketing Spend:</label><br>
+  <input type="number" name="mrktspnd" min="0" required><br><br>
+  <label>State of Operation:</label><br>
+  <input type="radio" name="st" value="New York" checked />New York
+  <input type="radio" name="st" value="California" />California
+  <input type="radio" name="st" value="Florida" />Florida<br><br>
+  <input type="submit" value="Submit" >
+</form>

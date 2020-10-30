@@ -1,0 +1,26 @@
+
+<form name="results" method="POST" action="{{ url_for('use') }}">
+  <h1><center>Startup Profit Predictions for new data</center></h1><br><br>
+            <table border="1">
+<!--The names below are displayed as table headers/labels-->
+                <tr>
+                    <th>Research and Development Spend</th>
+                    <th>Administration Spend</th>
+                    <th>Marketing Spend</th>
+                    <th>State of Operation</th>
+				</tr>
+<!--The names below have to match the new_df column names exactly-->
+            {% for index, row in data.iterrows() %}
+                <tr>
+                        <td>{{ row['R&D Spend'] | int }}</td>
+                        <td>{{ row['Administration'] | int }}</td>
+                        <td>{{ row['Marketing Spend'] }}</td>
+                        <td>{{ row['State'] }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        <br>
+	<label>Profit Prediction:</label>{{pred}}<br><br>
+
+   <input type="submit" value="Blank Form">
+</form>
